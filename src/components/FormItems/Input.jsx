@@ -9,7 +9,7 @@ import {
 export const InputFormControl = ({ name, register, errors, helper = '' }) => {
 	return (
 		<FormControl w="md" p="4" isRequired isInvalid={errors[name]}>
-			<FormLabel htmlFor={name}>email</FormLabel>
+			<FormLabel htmlFor={name}>{name}</FormLabel>
 			<Input id={name} placeholder={name} {...register(`${name}`)} />
 			{errors[name] ? (
 				<FormErrorMessage>{errors?.[name]?.message}</FormErrorMessage>
