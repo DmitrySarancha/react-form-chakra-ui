@@ -17,6 +17,7 @@ export const InputFormControl = ({ name, register, errors, helper = '' }) => {
 
 	const boxStyle = {
 		w: 'lg',
+		m: '2rem 0',
 		border: '1px',
 		borderRadius: 'lg',
 		boxShadow: `${boxStyleShadow}`,
