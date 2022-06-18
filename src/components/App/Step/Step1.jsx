@@ -1,4 +1,4 @@
-import { Heading, useColorModeValue } from '@chakra-ui/react';
+import { useColorModeValue } from '@chakra-ui/react';
 import { FaRegHandLizard } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { InputFormControl } from '../../FormItems/Input';
 import { ButtonForm } from '../../FormItems/Button';
 import { useNavigate } from 'react-router-dom';
+import { Heading1 } from './Heading';
 
 const scheme = yup.object().shape({
 	'First Name': yup
@@ -37,9 +38,8 @@ export const Step1 = () => {
 
 	return (
 		<>
-			<Heading as="h1" size="xl" mt="2rem">
-				🐁 Step 1
-			</Heading>
+			<Heading1 text="🐁 Step 1" />
+
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<InputFormControl
 					name="First Name"
