@@ -1,4 +1,3 @@
-import { useColorModeValue } from '@chakra-ui/react';
 import { FaRegHandLizard } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -29,8 +28,6 @@ export const Step1 = () => {
 		resolver: yupResolver(scheme),
 	});
 	const navigate = useNavigate();
-
-	const buttonColor = useColorModeValue('cyan.500', 'blue.500');
 
 	const onSubmit = data => {
 		navigate('/step2');
