@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^14.1.0",
     "framer-motion": "^6.2.9",
     "libphonenumber-js": "^1.10.6",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-confetti": "^6.1.0",
     "react-dom": "^18.2.0",
@@ -46,6 +47,6 @@
     ]
   },
   "devDependencies": {
-    "prettier": "2.7.1"
+    "prettier": "^2.7.1"
   }
 }
