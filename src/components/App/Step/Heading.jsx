@@ -3,12 +3,12 @@ import { Heading } from '@chakra-ui/react';
 
 export const Heading1 = ({ text }) => {
 	return (
-		<Heading as="h1" size="xl" mt="2rem">
+		<Heading as="h1" size="xl" mt="2rem" fontFamily="heading1">
 			{text}
 		</Heading>
 	);
 };
 
 Heading.propTypes = {
-	text: PropTypes.string.isRequired,
+	text: PropTypes.string,
 };
