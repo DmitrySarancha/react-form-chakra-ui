@@ -53,7 +53,7 @@ export const Step1 = () => {
 
 				<ButtonForm
 					isDisabled={!isValid}
-					text="Next"
+					texts="Next"
 					rightIcon={<FaRegHandLizard />}
 				/>
 			</form>

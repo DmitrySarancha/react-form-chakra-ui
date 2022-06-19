@@ -1,7 +1,7 @@
 import { Button, useColorModeValue } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
-export const ButtonForm = ({ text, rightIcon, isDisabled }) => {
+export const ButtonForm = ({ texts, rightIcon, isDisabled }) => {
 	const buttonColor = useColorModeValue('cyan.500', 'blue.500');
 	const buttonShadow = useColorModeValue('lg', 'dark-lg');
 
@@ -19,12 +19,12 @@ export const ButtonForm = ({ text, rightIcon, isDisabled }) => {
 				transform: 'scale(0.95)',
 			}}
 		>
-			{text}
+			{texts}
 		</Button>
 	);
 };
 ButtonForm.propTypes = {
 	rightIcon: PropTypes.element,
 	isDisabled: PropTypes.bool,
-	text: PropTypes.string.isRequired,
+	texts: PropTypes.string.isRequired,
 };
