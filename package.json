@@ -1,52 +1,49 @@
 {
-  "name": "react-form-chakra",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@chakra-ui/react": "^2.2.1",
-    "@emotion/react": "^11.0.0",
-    "@emotion/styled": "^11.0.0",
-    "@hookform/resolvers": "^2.9.1",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.0.1",
-    "@testing-library/user-event": "^14.1.0",
-    "framer-motion": "^6.2.9",
-    "libphonenumber-js": "^1.10.6",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-confetti": "^6.1.0",
-    "react-dom": "^18.2.0",
-    "react-dropzone": "^14.2.1",
-    "react-hook-form": "^7.32.1",
-    "react-icons": "^3.0.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "sweetalert2": "^11.4.17",
-    "web-vitals": "^0.2.2",
-    "yup": "^0.32.11"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "prettier": "^2.7.1"
-  }
+	"name": "react-form-chakra",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@chakra-ui/react": "^2.2.1",
+		"@emotion/react": "^11.0.0",
+		"@emotion/styled": "^11.0.0",
+		"@hookform/resolvers": "^2.9.1",
+		"@testing-library/jest-dom": "^5.16.4",
+		"@testing-library/react": "^13.0.1",
+		"@testing-library/user-event": "^14.1.0",
+		"framer-motion": "^6.2.9",
+		"libphonenumber-js": "^1.10.6",
+		"prop-types": "^15.8.1",
+		"react": "^18.2.0",
+		"react-confetti": "^6.1.0",
+		"react-dom": "^18.2.0",
+		"react-dropzone": "^14.2.1",
+		"react-hook-form": "^7.32.1",
+		"react-icons": "^3.0.0",
+		"react-router-dom": "^6.3.0",
+		"react-scripts": "5.0.1",
+		"sweetalert2": "^11.4.17",
+		"web-vitals": "^0.2.2",
+		"yup": "^0.32.11"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"prettier": "^2.7.1"
+	}
 }
