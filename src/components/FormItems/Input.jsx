@@ -23,18 +23,9 @@ export const InputFormControl = ({
 	const boxStyleShadow = useColorModeValue('lg', 'dark-lg');
 
 	const boxStyle = {
-		w: 'lg',
-		m: '2rem 0',
-		border: '1px',
+		w: 'full',
 		borderRadius: 'lg',
 		boxShadow: `${boxStyleShadow}`,
-		borderColor: `${boxStyleBorderColor}`,
-	};
-
-	const formControlStyle = {
-		w: 'md',
-		p: '4',
-		m: '0 auto',
 	};
 
 	const inputStyle = {
@@ -47,7 +38,7 @@ export const InputFormControl = ({
 
 	return (
 		<Box {...boxStyle}>
-			<FormControl {...formControlStyle} isRequired isInvalid={errors[name]}>
+			<FormControl p="4" isInvalid={errors[name]}>
 				<FormLabel htmlFor={name}>{name}</FormLabel>
 				<Input
 					type={type}

@@ -3,7 +3,12 @@ import { Heading1 } from './Heading';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { InputFormControl } from '../../FormItems/Input';
-import { Checkbox, ScaleFade, useColorModeValue } from '@chakra-ui/react';
+import {
+	Checkbox,
+	ScaleFade,
+	useColorModeValue,
+	VStack,
+} from '@chakra-ui/react';
 import parsePhoneNumberFromString from 'libphonenumber-js';
 import { ButtonForm } from '../../FormItems/Button';
 import { FaWaze } from 'react-icons/fa';
@@ -14,10 +19,7 @@ const scheme = yup.object().shape({
 		.string()
 		.email('Напиши ёё правильно и получи 🍪')
 		.required('Введите почту ✉'),
-	Telephone: yup
-		.number()
-		.integer('Номер сосоит только из чисел 📵')
-		.required('Введите свой номер телефона 📵'),
+	Telephone: yup.number().integer('Номер сосоит только из чисел 📵'),
 });
 
 export const Step2 = () => {
@@ -27,7 +29,7 @@ export const Step2 = () => {
 		watch,
 		formState: { errors },
 	} = useForm({
-		mode: 'onChange',
+		mode: 'onBlur',
 		resolver: yupResolver(scheme),
 	});
 
@@ -55,39 +57,42 @@ export const Step2 = () => {
 		<>
 			<Heading1 text="🦄 Step 2" />
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<InputFormControl
-					type="email"
-					helper="📩"
-					name="Email"
-					errors={errors}
-					register={register}
-				/>
-
-				<Checkbox
-					size="lg"
-					colorScheme={chekBoxColorScheme}
-					{...register('check')}
-				>
-					Добавить номер телефона
-				</Checkbox>
-
-				<ScaleFade
-					in={cheked}
-					initialScale={0.8}
-					reverse={true}
-					unmountOnExit={true}
-				>
+				<VStack spacing="8" mt="8" w="md">
 					<InputFormControl
-						type="tel"
-						name="Telephone"
-						helper="📱"
+						type="email"
+						helper="📩"
+						name="Email"
 						errors={errors}
 						register={register}
-						onChange={onChange}
 					/>
-				</ScaleFade>
 
-				<ButtonForm texts="Go!" rightIcon={<FaWaze />} />
+					<Checkbox
+						size="lg"
+						m={'2rem 0'}
+						colorScheme={chekBoxColorScheme}
+						{...register('check')}
+					>
+						Добавить номер телефона
+					</Checkbox>
+
+					<ScaleFade
+						in={cheked}
+						initialScale={0.8}
+						reverse={true}
+						unmountOnExit={true}
+					>
+						<InputFormControl
+							type="tel"
+							name="Telephone"
+							helper="📱"
+							errors={errors}
+							register={register}
+							onChange={onChange}
+						/>
+					</ScaleFade>
+
+					<ButtonForm texts="Go!" rightIcon={<FaWaze />} />
+				</VStack>
 			</form>
 		</>
 	);

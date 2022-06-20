@@ -6,6 +6,7 @@ import { InputFormControl } from '../../FormItems/Input';
 import { ButtonForm } from '../../FormItems/Button';
 import { useNavigate } from 'react-router-dom';
 import { Heading1 } from './Heading';
+import { VStack } from '@chakra-ui/react';
 
 const scheme = yup.object().shape({
 	'First Name': yup
@@ -38,24 +39,26 @@ export const Step1 = () => {
 			<Heading1 text="🐁 Step 1" />
 
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<InputFormControl
-					name="First Name"
-					register={register}
-					errors={errors}
-					helper="💬"
-				/>
-				<InputFormControl
-					name="Last Name"
-					register={register}
-					errors={errors}
-					helper="💬"
-				/>
+				<VStack spacing="8" mt="8" w="md">
+					<InputFormControl
+						name="First Name"
+						register={register}
+						errors={errors}
+						helper="💬"
+					/>
+					<InputFormControl
+						name="Last Name"
+						register={register}
+						errors={errors}
+						helper="💬"
+					/>
 
-				<ButtonForm
-					isDisabled={!isValid}
-					texts="Next"
-					rightIcon={<FaRegHandLizard />}
-				/>
+					<ButtonForm
+						isDisabled={!isValid}
+						texts="Next"
+						rightIcon={<FaRegHandLizard />}
+					/>
+				</VStack>
 			</form>
 		</>
 	);
