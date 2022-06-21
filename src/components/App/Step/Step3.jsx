@@ -2,10 +2,13 @@ import { VStack } from '@chakra-ui/react';
 import { ButtonForm } from 'components/FormItems/Button';
 import { InputFile } from 'components/FormItems/InputFile';
 import { useForm } from 'react-hook-form';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useData } from 'utils/useData';
 import { Heading1 } from './Heading';
 
 export const Step3 = () => {
+	const [setStore] = useData();
+
 	const { handleSubmit, control } = useForm({
 		mode: 'onBlur',
 	});
@@ -13,7 +16,7 @@ export const Step3 = () => {
 	const navigate = useNavigate();
 
 	const onSubmit = data => {
-		console.log(data);
+		setStore(data);
 		navigate('/result');
 	};
 

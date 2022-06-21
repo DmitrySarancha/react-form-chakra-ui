@@ -7,6 +7,7 @@ import { ButtonForm } from '../../FormItems/Button';
 import { useNavigate } from 'react-router-dom';
 import { Heading1 } from './Heading';
 import { VStack } from '@chakra-ui/react';
+import { useData } from 'utils/useData';
 
 const scheme = yup.object().shape({
 	'First Name': yup
@@ -20,6 +21,7 @@ const scheme = yup.object().shape({
 });
 
 export const Step1 = () => {
+	const [store, setValues] = useData();
 	const {
 		register,
 		handleSubmit,
@@ -27,10 +29,15 @@ export const Step1 = () => {
 	} = useForm({
 		mode: 'onChange',
 		resolver: yupResolver(scheme),
+		defaultValues: {
+			'First Name': store['First Name'],
+			'Last Name': store['Last Name'],
+		},
 	});
 	const navigate = useNavigate();
 
 	const onSubmit = data => {
+		setValues(data);
 		navigate('/step2');
 	};
 
