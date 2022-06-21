@@ -7,12 +7,11 @@ import { useData } from 'utils/useData';
 import { Heading1 } from './Heading';
 
 export const Step3 = () => {
-	const [setStore] = useData();
+	const [_, setStore] = useData();
 
 	const { handleSubmit, control } = useForm({
 		mode: 'onBlur',
 	});
-
 	const navigate = useNavigate();
 
 	const onSubmit = data => {
@@ -26,7 +25,7 @@ export const Step3 = () => {
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<VStack>
 					<InputFile control={control} name="file" />
-					<ButtonForm texts="gogog" />
+					<ButtonForm texts="Go next! 🦔" />
 				</VStack>
 			</form>
 		</>

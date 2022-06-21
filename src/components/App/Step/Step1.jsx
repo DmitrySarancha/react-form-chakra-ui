@@ -27,7 +27,7 @@ export const Step1 = () => {
 		handleSubmit,
 		formState: { errors, isValid },
 	} = useForm({
-		mode: 'onChange',
+		mode: 'onBlur',
 		resolver: yupResolver(scheme),
 		defaultValues: {
 			'First Name': store['First Name'],

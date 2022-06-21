@@ -1,4 +1,4 @@
-import { Button, useColorMode } from '@chakra-ui/react';
+import { Button, Heading, useBoolean, useColorMode } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import {
 	Table,
@@ -8,7 +8,6 @@ import {
 	Tr,
 	Th,
 	Td,
-	TableCaption,
 	TableContainer,
 } from '@chakra-ui/react';
 import { useData } from 'utils/useData';
@@ -18,11 +17,18 @@ export const Result = () => {
 	const { colorMode } = useColorMode();
 
 	const data = Object.entries(store).filter(item => item[0] !== 'file');
-	console.log(data);
+	const { file } = store;
+
+	const next = () => {
+		navigate('/');
+	};
 
 	return (
 		<>
-			<TableContainer mt={8}>
+			<Heading as="h2" mt="5">
+				📋 Form Value
+			</Heading>
+			<TableContainer mt="8" w="max-content">
 				<Table
 					variant="simple"
 					colorScheme={colorMode === 'light' ? 'red' : 'yellow'}
@@ -37,13 +43,13 @@ export const Result = () => {
 						{data.map(i => {
 							return typeof i[1] === 'boolean' ? (
 								<Tr>
-									<Td>{i[0]}</Td>
-									<Td>{i[1].toString()}</Td>
+									<Td>{i[0] || '...'}</Td>
+									<Td>{i[1].toString() || '...'}</Td>
 								</Tr>
 							) : (
 								<Tr>
-									<Td>{i[0]}</Td>
-									<Td>{i[1]}</Td>
+									<Td>{i[0] || '...'}</Td>
+									<Td>{i[1] || '...'}</Td>
 								</Tr>
 							);
 						})}
@@ -51,7 +57,31 @@ export const Result = () => {
 				</Table>
 			</TableContainer>
 
-			<Button mt={8} colorScheme="teal" size="md" onClick={() => navigate('/')}>
+			<Heading as="h2" mt="5">
+				📦 File Value
+			</Heading>
+
+			{file && (
+				<TableContainer mt="8" w="max-content">
+					<Table colorScheme={colorMode === 'light' ? 'red' : 'yellow'}>
+						<Thead>
+							<Tr>
+								<Th>Name</Th>
+								<Th>Value</Th>
+							</Tr>
+						</Thead>
+						<Tbody>
+							{file.map(i => (
+								<Tr>
+									<Td>{i.name}</Td>
+									<Td>{i.size}</Td>
+								</Tr>
+							))}
+						</Tbody>
+					</Table>
+				</TableContainer>
+			)}
+			<Button m="2rem 0" colorScheme="teal" size="md" onClick={next}>
 				Go restart
 			</Button>
 		</>
