@@ -40,8 +40,7 @@ export const InputFile = ({ name, control }) => {
 		<Controller
 			name={name}
 			control={control}
-			defaultValue={[]}
-			render={({ field: { onChange, onBlur, value, name } }) => (
+			render={({ field: { onChange, onBlur, name } }) => (
 				<>
 					<Dropzone onDrop={onChange} maxSize={MAX_SIZE}>
 						{({
@@ -53,7 +52,7 @@ export const InputFile = ({ name, control }) => {
 						}) => {
 							const files = acceptedFiles.map(file => (
 								<>
-									<ListItem key={file.path}>
+									<ListItem key={file.name}>
 										<ListIcon as={MdCheckCircle} color="green.500" />
 										Имя файла - {file.name}
 										<hr></hr>
@@ -66,7 +65,7 @@ export const InputFile = ({ name, control }) => {
 								errors.map(error => (
 									<>
 										{error.code === 'file-too-large' && (
-											<ListItem>
+											<ListItem key={file.name}>
 												<ListIcon as={MdErrorOutline} color="red.500" />
 												Максимальный размер файла 15 мб
 												<hr />
@@ -80,6 +79,7 @@ export const InputFile = ({ name, control }) => {
 								borderColor: '#c43bb7',
 								transition: { duration: 0.1 },
 							};
+
 							return (
 								<>
 									<VStack {...rootBoxStyle} justify="center">
