@@ -19,7 +19,6 @@ export const InputFormControl = ({
 }) => {
 	const inputFocusBorderColor = useColorModeValue('purple.300', 'yellow.600');
 	const inputStyleShadow = useColorModeValue('md', 'dark-lg');
-	const boxStyleBorderColor = useColorModeValue('cyan.300', 'blue.700');
 	const boxStyleShadow = useColorModeValue('lg', 'dark-lg');
 
 	const boxStyle = {
@@ -29,7 +28,6 @@ export const InputFormControl = ({
 	};
 
 	const inputStyle = {
-		size: 'lg',
 		variant: 'outline',
 		focusBorderColor: `${inputFocusBorderColor}`,
 		errorBorderColor: 'red.300',
