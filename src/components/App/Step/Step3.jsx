@@ -21,7 +21,7 @@ export const Step3 = () => {
 
 	return (
 		<>
-			<Heading1 text={'Hello!'} />
+			<Heading1 text='Step 3 👻' />
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<VStack>
 					<InputFile control={control} name="file" />
